@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+* {
+  box-sizing: border-box;
+}
+:root {
+  /* Light Theme */
+  --background-color: hsl(0, 0%, 100%); /* white */
+  --background-gradient-start: hsl(210, 90%, 78%);
+  --background-gradient-end: hsl(200, 80%, 75%);
+  --elements-color: hsl(200, 10%, 90%); /* cards / header */
+  --text-color: hsl(200, 20%, 20%); /* dark text */
+}
+
+/* Dark Theme */
+.dark {
+  --background-color: hsl(207, 26%, 17%); /* main background */
+  --background-gradient-start: hsl(207, 26%, 17%);
+  --background-gradient-end: hsl(209, 23%, 22%);
+  --elements-color: hsl(209, 23%, 22%); /* card / header */
+  --text-color: hsl(0, 0%, 100%); /* white text */
+}
+/* Shimmer card colors */
+main .shimmer-card {
+  --shimmer-color: hsl(0, 0%, 78%);
+}
+main.dark .shimmer-card {
+  --shimmer-color: hsl(208, 21%, 34%);
+}
+main,
+header {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+main.dark,
+header.dark {
+  --background-color: hsl(207, 26%, 17%);
+  --text-color: white;
+  --elements-color: hsl(209, 23%, 22%);
+}
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/XRXV3I6Li01BKofINeaB.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+main {
+  padding: 24px;
+  min-height: calc(100vh - 73px);
+}

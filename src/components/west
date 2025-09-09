@@ -1,0 +1,10 @@
+🌍 REST Countries Explorer – Version 3!
+
+This is my third iteration of the REST Countries Explorer project:
+1️⃣ Version 1: Built with HTML, CSS3, and JavaScript – basic functionality to fetch and show countries.
+2️⃣ Version 2: Rebuilt with React, Parcel, and CSS3 – improved UI, modular components, and better structure.
+3️⃣ Version 3: React + Vite + Tailwind CSS – fully optimized: lazy loading components and images, dark/light theme toggle, shimmer placeholders, border country navigation, and unit tests.
+
+💻 Features: Search & filter countries, navigate through border countries, responsive UI, dark/light theme.
+📂 Check the project: [GitHub repo link]
+🌐 Live demo: [Netlify/Vercel link]
