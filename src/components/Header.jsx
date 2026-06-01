@@ -1,28 +1,18 @@
-import { useTheme } from '../hooks/useTheme';
-
+import { useTheme } from '../Contexts/ThemeContext';
 export default function Header() {
-  const [isDark, setIsDark] = useTheme();
+  const { isDark, setIsDark } = useTheme();
 
   return (
-    <header className={`sticky top-0 z-10 p-6 shadow-lg ${isDark ? 'dark' : ''}`}>
-      <div className='mx-auto flex max-w-7xl items-center justify-between'>
-        <h2 className='font-bold'>
-          <a href='/'>Where is the world?</a>
+    <header className={` ${isDark ? 'dark' : ''} sticky top-0 z-10 mx-auto w-full max-w-7xl p-2 shadow-lg`}>
+      <div className='flex w-full max-w-7xl items-center justify-between'>
+        <h2 className='w-1/2 text-2xl font-bold'>
+          <a href='/' className='flex items-center gap-2'>
+            <img src='/GlobeScope.webp' alt='GlobScope logo' className='h-16 w-16 rounded-4xl' />
+            Globe Scope
+          </a>
         </h2>
-        <p
-          className='cursor-pointer rounded-sm px-2 py-1 transition-transform duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:outline hover:outline-gray-400'
-          onClick={() => {
-            setIsDark(!isDark);
-            localStorage.setItem('isDarkMood', !isDark);
-          }}
-        >
-          <i
-            className={`fa-solid fa-${isDark ? 'sun' : 'moon'} ${isDark ? 'text-yellow-400' : 'text-amber-500'}`}
-            id='themeIcon'
-          />
-          &nbsp;&nbsp;
-          <span>{isDark ? 'Light' : 'Dark'} Mode</span>
-        </p>
+
+        <button onClick={() => setIsDark(!isDark)}>{isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}</button>
       </div>
     </header>
   );

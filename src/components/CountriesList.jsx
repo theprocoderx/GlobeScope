@@ -35,7 +35,7 @@ export default function CountriesList({ searchQuery, region }) {
 
   return (
     <>
-      <div className='m-4 mx-auto grid max-w-7xl [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))] justify-items-center gap-8 p-4'>
+      <div className='m-4 mx-auto grid w-full max-w-7xl [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))] justify-items-center gap-8 p-4'>
         {filteredCountries.map((country) => {
           return (
             <CountryCard

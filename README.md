@@ -1,140 +1,223 @@
-# REST Countries Explorer
+# 🌍 REST Countries Explorer
 
-## Description
+A modern and responsive country explorer application built with **React.js**, **Vite**, and **Tailwind CSS**. The application fetches data from the REST Countries API and allows users to search, filter, and explore detailed information about countries around the world.
 
-**REST Countries Explorer** is a **React + Vite + Tailwind CSS** application that fetches country data from the **REST Countries API** and allows users to search and filter countries by name and region.
+## 🔗 Live Demo & Links
 
-The project is optimized with:
-
-- **Lazy loading** for components and images
-- **Dark/Light theme toggle** using `ThemeContext`
-- **Shimmer placeholders** during data loading
-- **Unit tests** for search and filter functionality
-
----
-
-## Features
-
-- **Search & Filter**
-  - Search countries by name (case-insensitive)
-  - Filter countries by region
-
-- **Lazy Loading**
-  - Components (`CountryCard`, `CountriesList`, `CountryDetails`) are lazy-loaded
-  - Images are lazy-loaded for better performance
-
-- **Theme Support**
-  - Dark and light mode using `ThemeContext.jsx` and `useTheme.js`
-
-- **Shimmer / Loading Placeholders**
-  - `CountriesListShimmer.jsx` for country list loading
-  - `CountryDetailShimmer.jsx` for country details loading
-
-- **Error Handling**
-  - `Error.jsx` component for API or routing errors
-
-- **Testing**
-  - Unit tests implemented for `useSearchFilter.js`
+- **Live Site:** https://globescope.netlify.app/
+- **GitHub Repository:** https://github.com/maganstackforge/GlobeScope
+- **GitHub Profile:** https://github.com/maganstackforge
+- **LinkedIn:** https://linkedin.com/in/maganstackforge
+- **Email:** [magan.stackforge@gmail.com](mailto:magan.stackforge@gmail.com)
 
 ---
 
-## Project Structure
+## 📸 Application Preview
 
-### Pages
+### Home Page
 
-- **Home.jsx**
-  - Main page displaying countries list
-  - Integrates `SearchBar.jsx`, `FilterMenu.jsx`, `CountriesList.jsx`
+![Home Page](public/screenshots/HomePage.png)
+![Home Page](public/screenshots/HomePageLight.png)
 
-- **Error.jsx**
-  - Shows fallback UI in case of API or routing errors
+### Country Details
 
-- **CountryDetails.jsx**
-  - **CountryDetails.jsx** – Displays detailed info of selected country.
-  - Also shows border countries, and you can navigate to a border country by clicking on it.
+![Country Details](public/screenshots/countryDetails.png)
 
----
+### Dark Mode
 
-### Components
-
-- **Header.jsx** – Top navigation bar with logo, theme toggle, etc.
-- **Home.jsx** – Main page component that combines search, filter, and countries list
-- **SearchBar.jsx** – Input for country search
-- **FilterMenu.jsx** – Dropdown for region filter
-- **CountriesList.jsx** – Renders list of country cards
-- **CountryCard.jsx** – Individual country card with lazy-loaded image
-- **CountriesListShimmer.jsx** – Loading placeholder for country list
-- **CountryDetailShimmer.jsx** – Loading placeholder for country details
-- **CountryDetails.jsx** – Displays detailed info of selected country
-- **Error.jsx** – Fallback component for API or routing errors
+![Search by Country](public/screenshots/SearchByCountry.png)
+![Search by Region](public/screenshots/SearchByReasion.png)
 
 ---
 
-### Hooks & Context
+## 📖 About The Project
 
-- **ThemeContext.jsx** – Provides theme globally
-- **ThemeProvider.jsx** – Wraps app and provides theme state
-- **useTheme.js** – Custom hook for toggling dark/light mode
-- **useSearchFilter.js** – Custom hook for filtering countries by name & region
+REST Countries Explorer is a frontend application that helps users discover countries worldwide through a clean and intuitive interface. Users can search countries by name, filter them by region, switch between light and dark themes, and view detailed information about each country.
+
+The project focuses on modern React development practices, reusable components, performance optimization, and responsive design.
 
 ---
 
-## Installation
+## ✨ Features
 
-### Prerequisites
+- Search countries by name
+- Filter countries by region
+- View detailed country information
+- Navigate between neighboring countries
+- Light and Dark theme support
+- Responsive design for mobile, tablet, and desktop
+- Skeleton loading states during data fetching
+- Lazy loading using React Suspense
+- Error handling for invalid routes and API failures
+- Custom hooks for reusable business logic
+- Unit testing for filtering functionality
 
-- Node.js >= 18
-- npm
+---
 
-### Steps
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React.js
+- Vite
+- Tailwind CSS
+- React Router DOM
+
+### State Management
+
+- React Context API
+
+### API
+
+- REST Countries API
+
+### Testing & Code Quality
+
+- Vitest
+- ESLint
+- Prettier
+
+---
+
+## 🧪 Test Results
+
+![Vitest Test Results](public/screenshots/vitest-tests.png)
+
+The project includes automated unit tests for custom filtering logic using Vitest.
+
+![Filtering Logic Tests](public/screenshots/vitest-tests-logic.png)
+
+## 📂 Project Structure
 
 ```bash
-# Clone the repository
-git clone <repo-url>
-cd <project-folder>
+GLOBESCOPEAPP
+│
+├── public
+│
+├── src
+│   ├── assets
+│   ├── components
+│   ├── Contexts
+│   ├── hooks
+│   │   ├── useSearchFilter.js
+│   │   ├── useSearchFilter.test.js
+│   │   └── useWindowSize.js
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+│   └── setupTests.js
+│
+├── .gitignore
+├── .prettierrc.json
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
 
-# Install dependencies
+---
+
+## 📂 Installation & Setup
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/maganstackforge/GlobeScope.git
+```
+
+### Navigate to the Project Directory
+
+```bash
+cd GlobeScope
+```
+
+### Install Dependencies
+
+```bash
 npm install
+```
 
-# Start development server
+### Start Development Server
+
+```bash
 npm run dev
 ```
 
-Running Tests
+### Build for Production
 
-# Run unit tests
+```bash
+npm run build
+```
 
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+---
+
+## 🧪 Running Tests
+
+Run the test suite using:
+
+```bash
 npm run test
+```
 
-Example Test Case for useSearchFilter.js:
+The project includes unit tests for custom filtering logic to ensure accurate search and region filtering functionality.
 
-import { useSearchFilter } from './useSearchFilter';
+---
 
-test('filters countries by name and region', () => {
-const data = [
-{ name: { common: 'India' }, region: 'Asia' },
-{ name: { common: 'Germany' }, region: 'Europe' },
-];
-const result = useSearchFilter(data, 'India', 'Asia');
-expect(result.length).toBe(1);
-});
+## 📱 Responsive Design
 
-# Styling
+The application follows a mobile-first approach and is optimized for:
 
-- Fully styled with Tailwind CSS for responsive and modern UI
+- Mobile Devices
+- Tablets
+- Laptops
+- Desktop Screens
 
-- Dark/Light mode supported
+---
 
-# API
+## ⚡ Performance Optimizations
 
-- Data fetched from REST Countries API
+- React Lazy Loading
+- Code Splitting with Suspense
+- Skeleton Loading Components
+- Reusable Custom Hooks
+- Optimized Component Rendering
 
-- API used to populate country list and country details dynamically
+---
 
-# Deployment
+## 🚀 Future Improvements
 
-- Build project for production:
+- Country comparison feature
+- Population and area statistics charts
+- Multi-language support
+- Bookmark favorite countries
+- Advanced sorting options
 
-- npm run build
+---
 
-- Deploy using Netlify, Vercel, or any static hosting
+## 👨‍💻 Author
+
+**Magan Singh**
+
+Frontend Developer Intern @ Namrata Universal
+
+- MCA Graduate
+- React.js Developer
+- JavaScript Enthusiast
+- Currently Learning Node.js
+
+---
+
+## 📄 License
+
+This project was created for learning, portfolio, and demonstration purposes.

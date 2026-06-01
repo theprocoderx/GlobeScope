@@ -3,22 +3,23 @@
   box-sizing: border-box;
 }
 :root {
-  /* Light Theme */
-  --background-color: hsl(0, 0%, 100%); /* white */
-  --background-gradient-start: hsl(210, 90%, 78%);
-  --background-gradient-end: hsl(200, 80%, 75%);
-  --elements-color: hsl(200, 10%, 90%); /* cards / header */
-  --text-color: hsl(200, 20%, 20%); /* dark text */
+  /* Premium Soft Light Theme (Aankhon ke liye ekdum comfortable) */
+  --background-color: #f8fafc; /* Clean Off-White (Slate-50) */
+  --background-gradient-start: #f1f5f9; /* Soft Soft Greyish-Blue (Slate-100) */
+  --background-gradient-end: #e2e8f0; /* Muted Subtle Tint (Slate-200) */
+  --elements-color: #ffffff; /* Cards aur Header ke liye pure white (taaki alag se float hote hue dikhein) */
+  --text-color: #0f172a; /* Deep Navy Charcoal (Slate-900) - Pure black se behtar hota hai readable-wise */
 }
 
 /* Dark Theme */
 .dark {
-  --background-color: hsl(207, 26%, 17%); /* main background */
-  --background-gradient-start: hsl(207, 26%, 17%);
-  --background-gradient-end: hsl(209, 23%, 22%);
-  --elements-color: hsl(209, 23%, 22%); /* card / header */
+  --background-color: #050816; /* main background */
+  --background-gradient-start: #050816;
+  --background-gradient-end: #0c112b; /* Gradient match karne ke liye thoda sa light navy tint */
+  --elements-color: #0c112b; /* card / header ke liye background se thoda alag color */
   --text-color: hsl(0, 0%, 100%); /* white text */
 }
+
 /* Shimmer card colors */
 main .shimmer-card {
   --shimmer-color: hsl(0, 0%, 78%);
@@ -27,15 +28,21 @@ main.dark .shimmer-card {
   --shimmer-color: hsl(208, 21%, 34%);
 }
 main,
-header {
+header,
+footer {
   background-color: var(--background-color);
   color: var(--text-color);
 }
-main.dark,
-header.dark {
-  --background-color: hsl(207, 26%, 17%);
+main.dark {
+  --background-color: #050816;
   --text-color: white;
-  --elements-color: hsl(209, 23%, 22%);
+  --elements-color: #0b1120;
+}
+/* ✅ Sahi Tarika: Jab parent (.dark) ho, tab andar ke header aur footer ka rang badlo */
+.dark header,
+.dark footer {
+  --background-color: #0b1120;
+  --text-color: #ffffff;
 }
 @font-face {
   font-family: 'Nunito';

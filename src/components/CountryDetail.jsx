@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import CountryDetailShimmer from './CountryDetailShimmer';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../Contexts/ThemeContext';
 export default function CountryDetail() {
-  const [isDark] = useTheme();
+  const { isDark } = useTheme();
   const navigate = useNavigate();
   const params = useParams();
   const { state } = useLocation();
@@ -81,7 +81,7 @@ export default function CountryDetail() {
 
   return (
     <>
-      <main className={`${isDark ? 'dark' : ''}`}>
+      <main className={`mx-auto w-full max-w-7xl ${isDark ? 'dark' : ''}`}>
         <div className='mx-auto max-w-7xl text-lg sm:p-10'>
           <button
             className='ml-[1.5%] cursor-pointer rounded-lg bg-[var(--elements-color)] px-6 py-2 shadow-xl transition-transform duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:outline hover:outline-gray-400'

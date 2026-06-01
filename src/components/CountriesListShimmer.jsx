@@ -1,7 +1,4 @@
-// import './CountriesListShimmer.css'
 export default function CountriesListShimmer() {
-  // const array = new Array(10).fill('')
-
   return (
     <div className='mx-auto mt-4 grid max-w-7xl [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))] justify-items-center gap-8'>
       {Array.from({ length: 12 }).map((el, i) => {
