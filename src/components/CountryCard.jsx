@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function CountryCard({ name, flag, population, region, capital, data, index }) {
+const CountryCard = ({ name, flag, population, region, capital, data, index }) => {
   return (
     <Link
       className='inline-block w-full overflow-hidden rounded-lg bg-[var(--elements-color)] pb-8 shadow-lg transition-transform duration-200 ease-in-out hover:scale-105 hover:shadow-[(--hover-color)] hover:outline hover:outline-[var(--border-color)]'
@@ -15,9 +16,9 @@ export default function CountryCard({ name, flag, population, region, capital, d
           alt={`${name} Flag`}
           decoding='async'
           src={flag}
-          // Pehle 4-6 flags ko turant load karo (Eager), baaki ko Lazy load hone do
+          // Optimizing LCP: Eagerly load the first 4 visible flags, lazy load the rest
           loading={index < 4 ? 'eager' : 'lazy'}
-          // Pehle 4 flags ko sabse unchi priority do
+          // Prioritize critical above-the-fold images for faster initial paint
           fetchPriority={index < 4 ? 'high' : 'low'}
         />
       </div>
@@ -38,4 +39,5 @@ export default function CountryCard({ name, flag, population, region, capital, d
       </div>
     </Link>
   );
-}
+};
+export default memo(CountryCard);

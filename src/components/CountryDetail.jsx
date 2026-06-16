@@ -134,8 +134,8 @@ export default function CountryDetail() {
             <div className='mt-20 flex flex-col gap-8 lg:flex-row'>
               <img
                 className='h-1/2 w-4/5 rounded-xl sm:w-3/5 lg:w-1/2'
-                width='400'
-                height='250'
+                width='300'
+                height='150'
                 src={countryData.flag}
                 alt={countryData.name}
                 loading='eager'

@@ -23,7 +23,9 @@ export default function Header() {
           </a>
         </h2>
 
-        <button onClick={() => setIsDark(!isDark)}>{isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}</button>
+        <button className='cursor-pointer' onClick={() => setIsDark(!isDark)}>
+          {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
       </div>
     </header>
   );

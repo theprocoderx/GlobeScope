@@ -1,13 +1,8 @@
 @import 'tailwindcss';
 
-* {
-  box-sizing: border-box;
-}
-
 /* =========================
    Fonts
 ========================= */
-
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/Nunito-Regular.woff2') format('woff2');
@@ -32,55 +27,36 @@
   font-display: swap;
 }
 
-@layer base {
-  html {
-    font-family: 'Nunito', sans-serif;
-  }
-}
-
-body {
-  @apply m-0 p-0;
+/* Tailwind v4 mein custom fonts ko theme ke andar joda jata hai */
+@theme {
+  --font-sans: 'Nunito', sans-serif;
 }
 
 /* =========================
-   Light Theme
+   Light Theme variables
 ========================= */
-
 :root {
   --background-color: #f7fafc;
   --background-gradient-start: #eef4f7;
   --background-gradient-end: #e4ecf2;
-
   --elements-color: #ffffff;
-
   --header-footer-color: #f1f5f9;
-
   --text-color: #1e293b;
-
   --border-color: #dbe4ea;
   --hover-color: #f1f5f9;
   --shadow-color: rgba(15, 23, 42, 0.08);
 }
 
 /* =========================
-   Dark Theme
+   Dark Theme variables
 ========================= */
-
 .dark {
   --background-color: #050816;
-
   --background-gradient-start: #050816;
   --background-gradient-end: #0c112b;
-
-  /* Cards */
-  --elements-color: #13203b;
-
-  /* Header/Footer */
-  --header-footer-color: #0b1324;
-
-  /* Text */
-  --text-color: #e2e8f0;
-
+  --elements-color: #13203b; /* Cards */
+  --header-footer-color: #0b1324; /* Header/Footer */
+  --text-color: #e2e8f0; /* Text */
   --border-color: #243b63;
   --shadow-color: rgba(0, 0, 0, 0.35);
 }
@@ -88,7 +64,6 @@ body {
 /* =========================
    Shimmer Colors
 ========================= */
-
 main .shimmer-card {
   --shimmer-color: hsl(0, 0%, 78%);
 }
@@ -98,9 +73,8 @@ main.dark .shimmer-card {
 }
 
 /* =========================
-   Layout Colors
+   Layout Styling
 ========================= */
-
 header,
 footer {
   background-color: var(--header-footer-color);
@@ -110,7 +84,6 @@ footer {
 main {
   background-color: var(--background-color);
   color: var(--text-color);
-
   padding: 24px;
   min-height: calc(100vh - 73px);
 }
