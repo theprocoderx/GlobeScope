@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
-const res = await import('../data/countries-v3.json');
-const countries = res.default;
+import CountriesListShimmer from './CountriesListShimmer';
+import { useCountries } from '../Contexts/CountriesContext';
 
 import CountryCard from './CountryCard';
 import { IoSearch } from 'react-icons/io5';
-
 const SearchFilterControls = () => {
   // 1. Initialize states for search query, local debounced input, and region filtering
   const [searchQuery, setSearchQuery] = useState('');
   const [localInput, setLocalInput] = useState('');
   const [region, setRegion] = useState('');
+
+  const { countries, loading } = useCountries();
 
   // 2. Debounce effect: Delays updating the global searchQuery state until the user stops typing for 300ms
   useEffect(() => {
@@ -21,16 +22,14 @@ const SearchFilterControls = () => {
   // 3. Performance Optimization: Memoizes the filtering process to prevent redundant array loops on unrelated re-renders
 
   const filteredCountries = useMemo(() => {
-    console.log('Filtering countries array based on search or region change...');
-
     return countries.filter((country) => {
-      const matchesSearch = country.name?.common.toLowerCase().includes(searchQuery);
+      const matchesSearch = country.name?.common?.toLowerCase().includes(searchQuery);
 
       const matchesRegion = region ? country.region === region : true;
 
       return matchesSearch && matchesRegion;
     });
-  }, [searchQuery, region]); // Triggers calculation only when searchQuery or region changes
+  }, [countries, searchQuery, region]); // Triggers calculation only when searchQuery or region changes
   return (
     <div className='mx-auto w-full max-w-7xl'>
       {/* --- Search and Filter Controls UI --- */}
@@ -64,18 +63,22 @@ const SearchFilterControls = () => {
 
       {/* --- Responsive Responsive Grid Layout for Country Cards --- */}
       <div className='m-4 mx-auto grid w-full max-w-7xl [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))] justify-items-center gap-8 p-4'>
-        {filteredCountries.map((country, index) => (
-          <CountryCard
-            key={country.cca3 || country.name?.common || index}
-            name={country.name?.common ?? 'Unknown'}
-            flag={country.flags?.svg ?? ''}
-            population={country.population ?? 0}
-            region={country.region ?? ''}
-            capital={typeof country.capital?.[0] === 'string' ? country.capital[0] : 'No Capital'}
-            index={index}
-            data={country}
-          />
-        ))}
+        {loading ? (
+          <CountriesListShimmer />
+        ) : (
+          filteredCountries.map((country, index) => (
+            <CountryCard
+              key={country.cca3 || country.name?.common || index}
+              name={country.name?.common ?? 'Unknown'}
+              flag={country.flags?.svg ?? ''}
+              population={country.population ?? 0}
+              region={country.region ?? ''}
+              capital={typeof country.capital?.[0] === 'string' ? country.capital[0] : 'No Capital'}
+              index={index}
+              data={country}
+            />
+          ))
+        )}
       </div>
     </div>
   );

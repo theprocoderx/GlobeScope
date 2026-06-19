@@ -17,9 +17,9 @@ const CountryCard = ({ name, flag, population, region, capital, data, index }) =
           decoding='async'
           src={flag}
           // Optimizing LCP: Eagerly load the first 4 visible flags, lazy load the rest
-          loading={index < 4 ? 'eager' : 'lazy'}
+          loading={index < 10 ? 'eager' : 'lazy'}
           // Prioritize critical above-the-fold images for faster initial paint
-          fetchPriority={index < 4 ? 'high' : 'low'}
+          fetchPriority={index < 10 ? 'high' : 'low'}
         />
       </div>
       <div className='p-4'>
