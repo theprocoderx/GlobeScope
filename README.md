@@ -65,11 +65,12 @@ This project was built to:
 
 ## 🔗 Important Links
 
-- 🌐 **Live Website:** https://globescope.netlify.app/
-- 📂 **GitHub Repository:** https://github.com/maganstackforge/GlobeScope
-- 💻 **GitHub Profile:** https://github.com/maganstackforge
-- 👤 **LinkedIn:** https://linkedin.com/in/maganstackforge
-- 📧 **Email:** magan.stackforge@gmail.com
+🌐 Live Website: https://globescope.netlify.app/
+💻 Repository: https://github.com/theprocoderx/globescope
+👨‍💻 Portfolio: https://procoderx.com
+🐙 GitHub: https://github.com/theprocoderx
+💼 LinkedIn: https://linkedin.com/in/procoderx
+📧 Email: procoderxs@gmail.com
 
 ---
 
