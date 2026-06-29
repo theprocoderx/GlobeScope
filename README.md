@@ -65,12 +65,12 @@ This project was built to:
 
 ## 🔗 Important Links
 
-🌐 Live Website: https://globescope.netlify.app/
-💻 Repository: https://github.com/theprocoderx/globescope
-👨‍💻 Portfolio: https://procoderx.com
-🐙 GitHub: https://github.com/theprocoderx
-💼 LinkedIn: https://linkedin.com/in/procoderx
-📧 Email: procoderxs@gmail.com
+- 🌐 Live Website: https://globescope.netlify.app/
+- 💻 Repository: https://github.com/theprocoderx/globescope
+- 👨‍💻 Portfolio: https://procoderx.com
+- 🐙 GitHub: https://github.com/theprocoderx
+- 💼 LinkedIn: https://linkedin.com/in/procoderx
+- 📧 Email: procoderxs@gmail.com
 
 ---
 
@@ -254,7 +254,7 @@ GlobeScope/
 Clone the repository:
 
 ```bash
-git clone https://github.com/maganstackforge/GlobeScope.git
+git clone https://github.com/theprocoderx/globescope.git
 ```
 
 Navigate to the project directory:
